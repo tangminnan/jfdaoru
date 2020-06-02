@@ -1,0 +1,15 @@
+/m2/
+/target/
+/.settings/
+/logs/
+/.metadata/
+/m2/
+/RemoteSystemsTempFiles/
+.classpath
+.project
+/bin/
+/applog/
+.DS_Store
+/doc/
+/.idea/
+jifenchaxundaoru-portal.iml

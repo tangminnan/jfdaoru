@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head th:include="include :: header"></head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content ">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <form class="form-horizontal m-t" id="signupForm">
+                        <!--<div class="form-group">
+                            <label class="col-sm-3 control-label">序号：</label>
+                            <div class="col-sm-8">
+                                <input id="sort" name="sort" class="form-control" type="text">
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">身份证号：</label>
+                            <div class="col-sm-8">
+                                <input id="identityCard" name="identityCard" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">姓名：</label>
+                            <div class="col-sm-8">
+                                <input id="uname" name="uname" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">培训名称：</label>
+                            <div class="col-sm-8">
+                                <input id="trainName" name="trainName" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">课程名称：</label>
+                            <div class="col-sm-8">
+                                <input id="courseName" name="courseName" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">课程类型：</label>
+                            <div class="col-sm-8">
+                                <input id="courseType" name="courseType" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">学习状态：</label>
+                            <div class="col-sm-8">
+                                <input id="learnState" name="learnState" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">课程成绩：</label>
+                            <div class="col-sm-8">
+                                <input id="courseResult" name="courseResult" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">开始学习时间：</label>
+                            <div class="col-sm-8">
+                                <input id="startLearnTime" name="startLearnTime" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">最后学习时间：</label>
+                            <div class="col-sm-8">
+                                <input id="endLearnTime" name="endLearnTime" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">获得积分：</label>
+                            <div class="col-sm-8">
+                                <input id="winIntegral" name="winIntegral" class="form-control" type="text">
+                            </div>
+                        </div>
+                        <!--<div class="form-group">
+                            <label class="col-sm-3 control-label">1:正常2:禁止：</label>
+                            <div class="col-sm-8">
+                                <input id="status" name="status" class="form-control" type="text">
+                            </div>
+                        </div>-->
+                        <div class="form-group">
+                            <div class="col-sm-8 col-sm-offset-3">
+                                <button type="submit" class="btn btn-primary">提交</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="include::footer"></div>
+<script type="text/javascript" src="/js/appjs/information/integralList/add.js">
+</script>
+<script type="text/javascript">
+    laydate.render({
+        elem: '#startLearnTime',
+        type: 'date',
+    });
+    laydate.render({
+        elem: '#endLearnTime',
+        type: 'date',
+    });
+</script>
+</body>
+</html>

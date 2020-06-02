@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jifenchaxundaoru.information.dao.IntegralListDao">
+
+	<select id="get" resultType="com.jifenchaxundaoru.information.domain.IntegralListDO">
+		select `id`,`sort`,`identity_card`,`uname`,`train_name`,`course_name`,`course_type`,`learn_state`,`course_result`,`start_learn_time`,`end_learn_time`,`win_integral`,`status` from t_integral_list where id = #{value}
+	</select>
+	
+	<select id="getIdentityCardByIntegral" resultType="com.jifenchaxundaoru.information.domain.IntegralListDO">
+		select `id`,`sort`,`identity_card`,`uname`,`train_name`,`course_name`,`course_type`,`learn_state`,`course_result`,`start_learn_time`,`end_learn_time`,`win_integral`,`status` from t_integral_list where identity_card = #{value}
+	</select>
+
+	<select id="list" resultType="com.jifenchaxundaoru.information.domain.IntegralListDO">
+		select `id`,`sort`,`identity_card`,`uname`,`train_name`,`course_name`,`course_type`,`learn_state`,`course_result`,`start_learn_time`,`end_learn_time`,`win_integral`,`status` from t_integral_list
+        <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="sort != null and sort != ''"> and sort = #{sort} </if>
+		  		  <if test="identityCard != null and identityCard != ''"> and identity_card = #{identityCard} </if>
+		  		  <if test="uname != null and uname != ''"> and uname = #{uname} </if>
+		  		  <if test="trainName != null and trainName != ''"> and train_name = #{trainName} </if>
+		  		  <if test="courseName != null and courseName != ''"> and course_name = #{courseName} </if>
+		  		  <if test="courseType != null and courseType != ''"> and course_type = #{courseType} </if>
+		  		  <if test="learnState != null and learnState != ''"> and learn_state = #{learnState} </if>
+		  		  <if test="courseResult != null and courseResult != ''"> and course_result = #{courseResult} </if>
+		  		  <if test="startLearnTime != null and startLearnTime != ''"> and start_learn_time = #{startLearnTime} </if>
+		  		  <if test="endLearnTime != null and endLearnTime != ''"> and end_learn_time = #{endLearnTime} </if>
+		  		  <if test="winIntegral != null and winIntegral != ''"> and win_integral = #{winIntegral} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		</where>
+        <choose>
+            <when test="sort != null and sort.trim() != ''">
+                order by ${sort} ${order}
+            </when>
+			<otherwise>
+                order by id desc
+			</otherwise>
+        </choose>
+		<if test="offset != null and limit != null">
+			limit #{offset}, #{limit}
+		</if>
+	</select>
+	
+ 	<select id="count" resultType="int">
+		select count(*) from t_integral_list
+		 <where>  
+		  		  <if test="id != null and id != ''"> and id = #{id} </if>
+		  		  <if test="sort != null and sort != ''"> and sort = #{sort} </if>
+		  		  <if test="identityCard != null and identityCard != ''"> and identity_card = #{identityCard} </if>
+		  		  <if test="uname != null and uname != ''"> and uname = #{uname} </if>
+		  		  <if test="trainName != null and trainName != ''"> and train_name = #{trainName} </if>
+		  		  <if test="courseName != null and courseName != ''"> and course_name = #{courseName} </if>
+		  		  <if test="courseType != null and courseType != ''"> and course_type = #{courseType} </if>
+		  		  <if test="learnState != null and learnState != ''"> and learn_state = #{learnState} </if>
+		  		  <if test="courseResult != null and courseResult != ''"> and course_result = #{courseResult} </if>
+		  		  <if test="startLearnTime != null and startLearnTime != ''"> and start_learn_time = #{startLearnTime} </if>
+		  		  <if test="endLearnTime != null and endLearnTime != ''"> and end_learn_time = #{endLearnTime} </if>
+		  		  <if test="winIntegral != null and winIntegral != ''"> and win_integral = #{winIntegral} </if>
+		  		  <if test="status != null and status != ''"> and status = #{status} </if>
+		  		</where>
+	</select>
+	 
+	<insert id="save" parameterType="com.jifenchaxundaoru.information.domain.IntegralListDO" useGeneratedKeys="true" keyProperty="id">
+		insert into t_integral_list
+		(
+			`sort`, 
+			`identity_card`, 
+			`uname`, 
+			`train_name`, 
+			`course_name`, 
+			`course_type`, 
+			`learn_state`, 
+			`course_result`, 
+			`start_learn_time`, 
+			`end_learn_time`, 
+			`win_integral`, 
+			`status`
+		)
+		values
+		(
+			#{sort}, 
+			#{identityCard}, 
+			#{uname}, 
+			#{trainName}, 
+			#{courseName}, 
+			#{courseType}, 
+			#{learnState}, 
+			#{courseResult}, 
+			#{startLearnTime}, 
+			#{endLearnTime}, 
+			#{winIntegral}, 
+			#{status}
+		)
+	</insert>
+	 
+	<update id="update" parameterType="com.jifenchaxundaoru.information.domain.IntegralListDO">
+		update t_integral_list 
+		<set>
+			<if test="sort != null">`sort` = #{sort}, </if>
+			<if test="identityCard != null">`identity_card` = #{identityCard}, </if>
+			<if test="uname != null">`uname` = #{uname}, </if>
+			<if test="trainName != null">`train_name` = #{trainName}, </if>
+			<if test="courseName != null">`course_name` = #{courseName}, </if>
+			<if test="courseType != null">`course_type` = #{courseType}, </if>
+			<if test="learnState != null">`learn_state` = #{learnState}, </if>
+			<if test="courseResult != null">`course_result` = #{courseResult}, </if>
+			<if test="startLearnTime != null">`start_learn_time` = #{startLearnTime}, </if>
+			<if test="endLearnTime != null">`end_learn_time` = #{endLearnTime}, </if>
+			<if test="winIntegral != null">`win_integral` = #{winIntegral}, </if>
+			<if test="status != null">`status` = #{status}</if>
+		</set>
+		where id = #{id}
+	</update>
+	
+	<delete id="remove">
+		delete from t_integral_list where id = #{value}
+	</delete>
+	
+	<delete id="batchRemove">
+		delete from t_integral_list where id in 
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="format-detection" content="telephone=no">
+<title>筋斗云</title>
+<style type="text/css">
+	*{margin:0; padding:0; border:none;box-sizing:border-box;}
+	body{max-width:750px;margin:0 auto;color:#333;font-family:"微软雅黑";background: #efefef;}
+	img {max-width: 100%;height: auto;}
+	.top{width: 100%;height: 3.1rem;position: relative;margin-bottom: .05rem;}
+	.top .close{width: .3rem;height: .3rem;background:url(images/close.png) no-repeat center;-webkit-background-size: contain;background-size: contain;position: absolute;left:.2rem;top:.3rem;}
+	li{list-style:none;line-height: 1rem;background:#fff;margin-bottom:.02rem;overflow: hidden;padding:0 .3rem;font-size: .28rem;}
+	li span{float: left;width:35%;font-weight: bold;}
+	li em{float: left;width: 65%;font-style: normal;}
+	p{font-size: .28rem;font-weight: bold;color:#fb1212;text-align: center;background: #fff;line-height: 1.2rem;}
+</style>
+</head>
+<body>
+	<div class="top">
+		<div class="close"></div>
+		<img src="images/topBg.png" alt=""/>
+	</div>
+	<ul>
+		<li><span>估价委托方</span><em>成都希望集团有限公司</em></li>
+		<li><span>报告号</span><em>筋斗云房估（2020）第04003</em></li>
+		<li><span>项目名称</span><em>1号二单元1003</em></li>
+		<li><span>估价目的</span><em>抵押</em></li>
+		<li><span>装修情况</span><em>简单装修</em></li>
+		<li><span>单价</span><em>8000元/平方米</em></li>
+		<li><span>建筑面积</span><em>120平方米</em></li>
+		<li><span>估价总值</span><em>20023333元</em></li>
+		<li><span>报告出具日期</span><em>2020年05月12日</em></li>
+		<li><span>报告有效期</span><em>2020年5月6日-2021年5月6日</em></li>
+		<li><span>联系电话</span><em>13566987741</em></li>
+	</ul>
+	<p>此报告为“四川筋斗云房地产评估公司”出具的报告!</p>
+</body>
+</html>
+<script type="text/javascript">
+	//字体大小
+	(function (doc, win) {
+		var docEl = doc.documentElement,
+			resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+			recalc = function () {
+				var clientWidth = docEl.clientWidth;
+				if (!clientWidth) return;
+				if(clientWidth>=750){
+					docEl.style.fontSize = '100px';
+				}else{
+					docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+				}
+			};
+
+		if (!doc.addEventListener) return;
+		win.addEventListener(resizeEvt, recalc, false);
+		doc.addEventListener('DOMContentLoaded', recalc, false);
+	})(document, window);	
+</script>
